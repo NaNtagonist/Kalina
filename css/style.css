@@ -1,4 +1,8 @@
-/* Сброс + базовые стили */
+:root {
+  --dark_blue: #283363;
+  --dark-gold: #D1AA56;
+  --dark-red: #AE2C36;
+}
 * {
   margin: 0;
   padding: 0;
@@ -6,70 +10,60 @@
 }
 
 body {
-  font-family:Georgia, 'Times New Roman', Times, serif serif;
-  background-color: #f3f3f3;
-  color: #283363;
+  font-family:Cormorant Garamond;
+  background-color: #fff;
+  color: var(--dark_blue);
   line-height: 1.5;
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   width: auto;
   margin: 0 auto;
   padding: 1em;
 }
+.pair-containers{
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .about {
+    width: 50em;
+  }
+  .pair-containers {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .slogan-section {
-  margin-top: 6em;
   position: relative;
   width: 100%;
-  min-height: 40vh;
+  min-height: 15em;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-align: center;
+  background-image:
+    linear-gradient(
+      to bottom,
+      #fff,
+      #ffffffc9
+    ),
+    url(/images/kalina\ pattern.svg);
+  
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.blurs {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-.blur-circle {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(6vw);
-  opacity: 0.6;
-  width: 40vw;
-  aspect-ratio: 1 / 1;
-  background: radial-gradient(circle, rgb(255, 200, 0), transparent);
-  top: 20%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-}
-
-.blur1 {
-  width: 40vw;
-  aspect-ratio: 1 / 1;
-  background: radial-gradient(circle, rgba(255, 0, 0, 0.324), transparent);
-  top: 20%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-}
-
-.blur2 {
-  width: 20vw;
-  aspect-ratio: 1 / 1;
-  background: radial-gradient(circle, rgba(255, 217, 0, 0.594), transparent);
-  top: 30%;
-  left: 45%;
-  transform: translate(-50%, -50%);
-}
 
 .slogan-text {
+  text-shadow: 0 0 0.2em #ffffff;
+  font-size: 3em;
+  color: var(--dark-blue);
+  font-weight: 800;
   position: relative;
   z-index: 1;
 }
@@ -81,7 +75,18 @@ header {
   height: 6em;
   position: fixed;
   z-index: 2;
+  transition: transform 0.3s ease-in-out;
 }
+header.hidden {
+  transform: translateY(-100%);
+}
+.header-logo {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  gap:2em
+}
+
 .side-menu__button {
   position: absolute;
   right: 0;
@@ -97,7 +102,7 @@ header {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #800020; /* бордовый */
+  background-color: var(--dark-red);
   color: white;
   display: flex;
   justify-content: center;
@@ -126,7 +131,7 @@ header {
 }
 
 .full-menu a:hover {
-  color: gold;
+  color: var(--dark-gold);
 }
 
 .full-menu.active {
@@ -147,14 +152,38 @@ header {
 }
 
 .menu-close:hover {
-  color: gold;
+  color: var(--dark-gold);
+}
+.nav-menu {
+  display: none;
+  width: 100%;
+  align-items:center;
 }
 
+.nav-menu ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+.nav-menu a {
+  color: var(--dark-red);
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+  
+}
 footer {
   background: #333;
   color: #fff;
   text-align: center;
-  padding: 2em 0;
+  padding: 2em 0 4em 0;
   margin-top: 2em;
 }
 /* Кнопки */
@@ -166,7 +195,7 @@ footer {
     display: inline-block;
     margin: 10px;
     padding: 12px 20px;
-    background: crimson;
+    background: var(--dark-red);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -176,6 +205,9 @@ footer {
   }
   .side-menu {
     display: none;
+  }
+  header {
+    text-align: start;
   }
 }
 /* Адаптивка */
@@ -191,14 +223,13 @@ footer {
   }
 }
 .about {
-  background-color: #f9f9f9;
+
   padding: 20px;
   text-align: center;
 }
-
 .about h2 {
   font-size: 28px;
-  color: #b22222; /* бордовый */
+  color: var(--dark-red);
   margin-bottom: 20px;
 }
 
@@ -220,14 +251,14 @@ footer {
 }
 
 .advantages {
-  background-color: #fff;
+  background-color: var(--dark_blue);
   padding: 60px 20px;
   text-align: center;
 }
 
 .advantages h2 {
   font-size: 28px;
-  color: #b22222;
+  color: var(--dark-gold);
   margin-bottom: 30px;
 }
 
@@ -241,7 +272,7 @@ footer {
 
 .adv-list li {
   font-size: 1.3em;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 15px;
   position: relative;
   display: flex;
@@ -249,6 +280,12 @@ footer {
 }
 
 @media (min-width: 768px) {
+  .advantages {
+    width: 30em;
+  }
+  .services {
+    width: 100%;
+  }
   .advantages h2 {
     font-size: 36px;
   }
@@ -257,41 +294,62 @@ footer {
   }
 }
 .services {
-  background-color: #f9f9f9;
+  background-color: var(--dark_blue);
+  color: var(--dark-gold);
   padding: 60px 20px;
   text-align: center;
 }
 
 .services h2 {
   font-size: 28px;
-  color: #b22222;
+  color: var(--dark-gold);
   margin-bottom: 30px;
 }
-
 .service-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
 }
 
 .service-item {
-  background-color: #fff;
-  padding: 20px;
-  border: 1px solid #e3e3e3;
-  border-radius: 12px;
-  font-size: 18px;
-  color: #333;
-  transition: 0.3s ease;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1em;
+  background-color:#AE2C36;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .service-item:hover {
   background-color: #fff0f0;
-  border-color: #b22222;
-  color: #b22222;
+  border-color: var(--dark-red);
+  color: var(--dark-red);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+.service-item:hover .overlay {
+  opacity: 1;
+}
+
+.service-item:focus-within .overlay,
+.service-item:active .overlay {
+  opacity: 1;
+}
 @media (min-width: 768px) {
   .services h2 {
     font-size: 36px;
@@ -315,16 +373,97 @@ footer {
 
 .price h2 {
   font-size: 32px;
-  color: #b22222;
+  color: var(--dark-red);
   margin-bottom: 20px;
 }
 .price iframe {
   width: 100%;
   max-width: 800px;
-  height: 600px; /* подгони под нужную высоту */
+  height: 600px;
   border: none;
   border-radius: 16px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
   margin-top: 20px;
 }
 
+.btn-fixed {
+  position: fixed;
+  bottom: 1em;
+  right: 1em; 
+  background-color: var(--dark-red);  
+  color: #fff; 
+  padding: 0.75em 1.5em;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.btn-fixed:hover {
+  background-color: var(--dark-red);
+}
+.staff-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.staff-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.staff-photo {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+
+.staff-info {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.staff-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.staff-info p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 0.5rem;
+}
+.clinic-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.clinic-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
