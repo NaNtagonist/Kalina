@@ -6,22 +6,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-<script src="https://api-maps.yandex.ru/2.1/?apikey=21cce6ac-1274-4149-9179-9fd566c4a836&lang=ru_RU" type="text/javascript"></script>
-<script type="text/javascript">
-  ymaps.ready(function() {
-    var map = new ymaps.Map("map", {
-      center: [55.766353, 37.705933],
-      zoom: 17,
-      controls: ["smallMapDefaultSet"]
-    });
-
-    var placemark = new ymaps.Placemark([55.766353, 37.705933], {
-      balloonContent: "Центр косметологии KALINA"
-    });
-
-    map.geoObjects.add(placemark);
-  });
-</script>
 <title>Центр косметологии KALINA</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -29,11 +13,11 @@
   <header>
     <div class="side-menu">
         <button class="side-menu__button" id="menuToggle"> 
-           <img style="margin-top: 0.7em;" src="/icons/flowbite--bars-outline.svg" alt="sidemenu"/>
+           <img src="/icons/flowbite--bars-outline.svg" alt="sidemenu"/>
         </button>
     </div>
     <div class="header-logo">
-        <img src="/images/logo2_2 1.png" alt="logo">
+        <img src="/images/logo2_2 1.png" alt="logo" style="margin-top: -16px; max-width: 10em;height: fit-content;">
         <nav class="nav-menu">
             <ul style="display: flex;">
                 <li><a href="#about">О нас</a></li>
@@ -69,6 +53,7 @@
                     <strong>Дарьей Сергеевной Кашкиной</strong> (Калининой). Мы находимся в премиальном жилом комплексе в Лефортово
                     и работаем по медицинской лицензии. У нас сочетаются профессионализм, комфорт и авторский подход к каждой процедуре.
                 </p>
+                <a href="https://wa.me/79096637312" class="btn-contact-us">Связаться с нами</a>
             </div>
             
         </section>
@@ -78,139 +63,198 @@
             <div class="container">
               <h2>Почему выбирают нас</h2>
               <ul class="adv-list">
-                <li><p style="margin-right: 0.5em;">🌿</p>Индивидуальный подход к каждому клиенту</li>
-                <li><p style="margin-right: 0.5em;">👩‍⚕️</p>Опытные врачи-косметологи</li>
-                <li><p style="margin-right: 0.5em;">🏢</p>Расположение в премиальном ЖК в Лефортово</li>
-                <li><p style="margin-right: 0.5em;">📋</p>Медицинская лицензия</li>
-                <li><p style="margin-right: 0.5em;">🍒</p>Более 2000 довольных пациентов, которые обрели внешность мечты</li>
-                <li><p style="margin-right: 0.5em;">🍒</p>Огромный спектр услуг по уходу за кожей и телом</li>
-                <li><p style="margin-right: 0.5em;"></p>Приятная и расслабляющая атмосфера</li>
+                <li><img style="margin-right: 0.5em;" src="/icons/heart.svg" alt="heart"></img>Индивидуальный подход к каждому клиенту</li>
+                <li><img style="margin-right: 0.5em;" src="/icons/doctor.svg" alt="doctor"></img>Опытные врачи-косметологи</li>
+                <li><img style="margin-right: 0.5em;" src="/icons/apart.svg" alt="apart"></img>Расположение в премиальном ЖК в Лефортово</li>
+                <li><img style="margin-right: 0.5em;" src="/icons/license.svg" alt="license"></img>Медицинская лицензия</li>
+                <li><img style="margin-right: 0.5em;" src="/icons/smile.svg" alt="smile"></img>Более 2000 довольных пациентов, которые обрели внешность мечты</li>
+                <li><img style="margin-right: 0.5em;" src="/icons/plenty.svg" alt="plenty"></img>Огромный спектр услуг по уходу за кожей и телом</li>
+                <li><img style="margin-right: 0.5em;" src="/icons/relax.svg" alt="relax"></img>Приятная и расслабляющая атмосфера</li>
               </ul>
             </div>
         </section>
         <section class="clinic" id="clinic">
             <div class="container">
                 <div class="clinic-slider">
-                    <div class="clinic-slide" style="background-image: url('/images/clinic1.jpg');"></div>
-                    <div class="clinic-slide" style="background-image: url('/images/clinic2.jpg');"></div>
-                    <div class="clinic-slide" style="background-image: url('/images/clinic3.jpg');"></div>
-                    <div class="clinic-slide" style="background-image: url('/images/clinic4.jpg');"></div>
+                    <div class="clinic-slide" style="background-image: url('/images/clinic1.jpg');" data-image="/images/clinic1.jpg"></div>
+                    <div class="clinic-slide" style="background-image: url('/images/clinic2.jpg');" data-image="/images/clinic2.jpg"></div>
+                    <div class="clinic-slide" style="background-image: url('/images/clinic3.jpg');" data-image="/images/clinic3.jpg"></div>
+                    <div class="clinic-slide" style="background-image: url('/images/clinic4.jpg');" data-image="/images/clinic4.jpg"></div>
+                    <div class="clinic-slide" style="background-image: url('/images/clinic5.jpg');" data-image="/images/clinic5.jpg"></div>
+                    <div class="clinic-slide" style="background-image: url('/images/clinic6.jpg');" data-image="/images/clinic6.jpg"></div>
+                    <div class="clinic-slide" style="background-image: url('/images/clinic7.jpg');" data-image="/images/clinic7.jpg"></div>
                   </div>
             </div>
-          </section>
-    </div>
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Основные направления</h2>
-            <div class="service-grid">
-            <div class="service-item">
-                <div class="overlay">Инъекционная косметология</div>
-            </div>
-            <div class="service-item">
-                <div class="overlay">Аппаратная косметология</div>
-            </div>
-            <div class="service-item">
-                <div class="overlay">Эстетическая косметология</div>
-            </div>
-            <div class="service-item">
-                <div class="overlay">Коррекция фигуры</div>
-            </div>
-            <div class="service-item">
-                <div class="overlay">Лазерная эпиляция</div>
-            </div>
-            <div class="service-item">
-                <div class="overlay">Восковая депиляция</div>
-            </div>
-            <div class="service-item">
-                <div class="overlay">Ламинирование бровей и ресниц</div>
-            </div>
-            <div class="service-item">
-                <div class="overlay">Перманентный макияж</div>
-            </div>
-            </div>
-        </div>
-        </section>
-    <div class="pair-containers">
-        <section class="price" id="price">
-            <div class="container">
-              <h2>Прайс</h2>
-              <iframe  src="https://app.arnica.pro/booking/booking?orgid=76079#/main">
-              </iframe>
-            </div>
-          </section>
-          <section class="staff" id="staff">
-            <div class="container">
-              <h2>Наша команда</h2>
-              <div class="staff-slider">
-                <div class="staff-slide">
-                  <div class="staff-photo" style="background-image: url('/images/staff1.jpg');">
-                    <div class="staff-info">
-                      <h3>Дарья Кашкина</h3>
-                      <p>Основатель, врач-косметолог</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="staff-slide">
-                  <div class="staff-photo" style="background-image: url('/images/staff2.jpg');">
-                    <div class="staff-info">
-                      <h3>Екатерина Иванова</h3>
-                      <p>Косметолог-эстетист</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="staff-slide">
-                  <div class="staff-photo" style="background-image: url('/images/staff3.jpg');">
-                    <div class="staff-info">
-                      <h3>Марина Соколова</h3>
-                      <p>Лазерный специалист</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="staff-slide">
-                  <div class="staff-photo" style="background-image: url('/images/staff4.jpg');">
-                    <div class="staff-info">
-                      <h3>Алена Громова</h3>
-                      <p>Мастер перманента</p>
-                    </div>
-                  </div>
-                </div>
+              <!-- Просмотрщик изображений -->
+            <div class="image-viewer" id="imageViewer">
+              <img class="viewer-image" id="viewerImage">
+              <div class="image-nav">
+                <button class="nav-btn prev-btn">&larr;</button>
+                <div class="image-counter" id="imageCounter"></div>
+                <button class="nav-btn next-btn">&rarr;</button>
               </div>
             </div>
           </section>
-    </div>
-    <div class="pair-containers">
-        
-          <section class="reviews">
-            <div class="container">
-                <h2>Отзывы наших клиентов</h2>
-                <div style="width:100%;height:800px;max-width: 700px; overflow:hidden;position:relative;">
-                    <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/157361322227?comments"></iframe>
-                    <a href="https://yandex.ru/maps/org/kalina/157361322227/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Kalina на карте Москвы — Яндекс Карты</a>
-                </div>
-            </div>
           </section>
     </div>
-    <div class="pair-containers">
-        <section class="location">
-            <div class="container">
-                <h2>Наш адрес</h2>
-                <p>г. Москва, Лефортово, улица Княжнина, 2</p>
-                <div id="map" style="border-radius:2em; width: 100%; height: 400px;"></div>
+    <section class="services" id="services">
+      <div class="container">
+        <h2>Основные направления</h2>
+        <div class="service-grid">
+          <!-- Карточка 1 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/inject.jpg');"></div>
+            <div class="service-caption">
+              <h3>Инъекционная косметология</h3>
+              <p>Современные методики омоложения с помощью инъекций.</p>
             </div>
-          </section>
-          <section class="social-media">
-            <div class="container">
-                <h2>Контакты</h2>
+          </div>
+    
+          <!-- Карточка 2 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/apparat.jpg');"></div>
+            <div class="service-caption">
+              <h3>Аппаратная косметология</h3>
+              <p>Результативные процедуры с использованием высокотехнологичного оборудования.</p>
             </div>
-          </section>
-    </div>
+          </div>
+    
+          <!-- Карточка 3 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/aethetic.png');"></div>
+            <div class="service-caption">
+              <h3>Эстетическая косметология</h3>
+              <p>Комплексный уход за кожей для поддержания красоты и здоровья.</p>
+            </div>
+          </div>
+    
+          <!-- Карточка 4 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/figure.jpg');"></div>
+            <div class="service-caption">
+              <h3>Коррекция фигуры</h3>
+              <p>Эффективные программы для моделирования контуров тела.</p>
+            </div>
+          </div>
+    
+          <!-- Карточка 5 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/laser.jpg');"></div>
+            <div class="service-caption">
+              <h3>Лазерная эпиляция</h3>
+              <p>Долговременное решение проблемы нежелательных волос.</p>
+            </div>
+          </div>
+    
+          <!-- Карточка 6 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/vox.jpg');"></div>
+            <div class="service-caption">
+              <h3>Восковая депиляция</h3>
+              <p>Классический метод удаления волос с длительным эффектом.</p>
+            </div>
+          </div>
+    
+          <!-- Карточка 7 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/brows.jpg');"></div>
+            <div class="service-caption">
+              <h3>Ламинирование бровей и ресниц</h3>
+              <p>Процедура для придания объема и ухоженного вида.</p>
+            </div>
+          </div>
+    
+          <!-- Карточка 8 -->
+          <div class="service-card">
+            <div class="service-item" style="background-image: url('/images/tattoo.jpg');"></div>
+            <div class="service-caption">
+              <h3>Перманентный макияж</h3>
+              <p>Идеальный макияж, который не требует ежедневного обновления.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="staff" id="staff">
+      <div class="container">
+        <h2>Наша команда</h2>
+        <div class="staff-grid" >
+          <div class="staff-card" style="background-image: url('/images/Kashkina.jpg');">
+            <div class="staff-info">
+              <h3>Кашкина Дарья Сергеевна</h3>
+              <p>Основатель, врач дерматолог, косметолог, пластический хирург</p>
+              <p>Стаж 9 лет</p>
+            </div>
+          </div>
+          <div class="staff-card" style="background-image: url('/images/Nikulina.jpg');">
+            <div class="staff-info">
+              <h3>Никулина Анна Алексеевна</h3>
+              <p>Врач-косметолог</p>
+              <p>Стаж 5 лет</p>
+            </div>
+          </div>
+          <div class="staff-card" style="background-image: url('/images/Uhova.jpg');">
+            <div class="staff-info">
+              <h3>Ухова Софья Вадимовна</h3>
+              <p>Косметик-эстетист</p>
+              <p>Стаж 2 года</p>
+            </div>
+          </div>
+          <div class="staff-card" style="background-image: url('/images/Ryazanova.jpg');">
+            <div class="staff-info">
+              <h3>Рязанова Габриела Вадимовна</h3>
+              <p>Медицинская сестра врача-косметолога</p>
+              <p>Стаж 5 лет</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="price" id="price">
+      <div class="container">
+        <h2>Прайс</h2>
+        <iframe  src="https://app.arnica.pro/booking/booking?orgid=76079#/main">
+        </iframe>
+      </div>
+    </section>
+    <section class="reviews">
+      <div class="container">
+          <h2>Отзывы наших клиентов</h2>
+          <div style="left: 50%;right: 50%;transform: translate(-50%);width:100%;height:800px;max-width: 700px; overflow:hidden;position:relative;">
+              <iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" src="https://yandex.ru/maps-reviews-widget/157361322227?comments"></iframe>
+              <a href="https://yandex.ru/maps/org/kalina/157361322227/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Kalina на карте Москвы — Яндекс Карты</a>
+          </div>
+      </div>
+    </section>
+    <section class="location">
+      <div class="container">
+          <h2>Наш адрес</h2>
+          <p>г. Москва, Лефортово, улица Княжнина, 2</p>
+          <div style="position:relative;overflow:hidden;"><iframe src="https://yandex.ru/map-widget/v1/?from=api-maps&ll=37.705903%2C55.766621&mode=poi&origin=jsapi_2_1_79&poi%5Bpoint%5D=37.705931%2C55.766547&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D157361322227&z=19.4" allowfullscreen="true" style="width: 80%; height: 20em; position:relative;border:none; border-radius: 2em;"></iframe></div>
+      </div>
+    </section>
   </main>
   <a href="https://app.arnica.pro/booking/booking?orgid=76079#/main" class="btn-fixed">Онлайн-запись</a>
   
   
   <footer id="contacts">
     <div class="container">
-      <p>Контакты: +7 (909) 670-90-70 | kalina.lefort@yandex.ru</p>
+      <section class="social-media">
+        <div class="container">
+          <h2>Контакты</h2>
+          <div class="social-icons">
+            <a href="https://t.me/kalinalefort" target="_blank" class="social-icon">
+              <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg>
+            </a>
+            <a href="https://vk.com/club225615736" target="_blank" class="social-icon">
+              <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"></path></svg>
+            </a>
+            <a href="https://wa.me/79096637312" target="_blank" class="social-icon">
+              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </footer>
 
