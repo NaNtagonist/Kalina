@@ -56,14 +56,6 @@ body {
   justify-content: center;
   overflow: hidden;
   text-align: center;
-  background-image:
-    linear-gradient(
-      to bottom,
-      #fff,
-      #ffffffc9
-    ),
-    url(/images/kalina\ pattern.svg);
-  
   background-repeat: repeat;
   background-size: cover;
   background-position: center;
