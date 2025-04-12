@@ -618,3 +618,22 @@ footer {
   height: 1.5em;
   fill: currentColor; 
 }
+.contacts {
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  width: 100%;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.contact-item a {
+  color: var(--dark-gold);
+  text-decoration: none;
+  transition: color 0.2s;
+}
