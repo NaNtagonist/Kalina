@@ -1,11 +1,140 @@
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-100.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-100i.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-200.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-200i.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-300.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-300i.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-400.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-400i.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-500.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-500i.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-600.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-600i.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-700.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-700i.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-800.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-800i.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-900.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rawline';
+  src: url('/fonts/rawline-900i.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
 :root {
-  --dark_blue: #283363;
-  --dark-gold: #D1AA56;
-  --dark-red: #AE2C36;
-  --stone-black: #202020;
+  --main-color: #ffffff;
+  --second-color: #f7ece1;
+  --third-color: #daaa3e;
+  --forth-color: #901c1f;
+  --text-color: #202020;
 }
 html {
-  scrollbar-color: var(--dark-gold) var(--dark_blue);
+  font-family:Rawline, sans-serif;
+  font-size: thin;
+  scrollbar-color: var(--third-color) var(--main-color);
   scrollbar-width: thin;
 }
 * {
@@ -13,14 +142,23 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-p {
-  color:var(--stone-black)
+p, h2, a, li {
+  color:var(--text-color);
+  font-weight:300;
+  line-height: 1.5;
+}
+h2 {
+  font-size: 25px;
+}
+h3 {
+  font-size: 20px;
+  font-weight:300;
+}
+p, a, li {
+  font-size: 15px;
 }
 body {
-  font-family:Cormorant Garamond;
-  background-color: #fff;
-  color: var(--dark_blue);
-  line-height: 1.5;
+  background-color: var(--main-color);
 }
 .container {
   display: flex;
@@ -31,53 +169,35 @@ body {
   padding: 1em;
 }
 .pair-containers{
+  padding-left: 1em;
+  padding-right: 1em;
+
   display: flex;
   flex-direction: column;
+}
 
-}
-@media (min-width: 768px) {
-  .about {
-    width: 50em;
-  }
-  .header-logo {
-    justify-content: space-between;
-  }
-  .pair-containers {
-    display: flex;
-    flex-direction: row;
-  }
-}
+
 .slogan-section {
-  position: relative;
-  width: 100%;
   min-height: 15em;
   display: flex;
+  justify-content:center;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
   text-align: center;
-  background-repeat: repeat;
-  background-size: cover;
-  background-position: center;
 }
-
-
 .slogan-text {
-  text-shadow: 0 0 0.2em #ffffff;
-  font-size: 3em;
-  color: var(--dark-blue);
-  font-weight: 800;
-  position: relative;
-  z-index: 1;
+  font-size: 2em;
+  color: var(--third-color);
+  font-weight: 700;
 }
 
 header {
-  background: #ffffff;
+  background: var(--main-color);
   text-align: center;
   width: 100%;
-  height: 6em;
+  height: 4em;
   position: fixed;
-  z-index: 2;
+  padding:0 10em;
+  z-index: 1;
   transition: transform 0.3s ease-in-out;
 }
 header.hidden {
@@ -92,7 +212,7 @@ header.hidden {
   gap:2em
 }
 .btn-contact-us {
-  background-color: var(--dark-red);  
+  background-color: var(--third-color);  
   color: #fff; 
   padding: 0.75em 1.5em;
   border-radius: 30px;
@@ -116,7 +236,7 @@ header.hidden {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: var(--dark-red);
+  background-color: var(--third-color);
   color: white;
   display: flex;
   justify-content: center;
@@ -182,19 +302,12 @@ header.hidden {
   padding: 0;
 }
 .nav-menu a {
-  color: var(--dark-red);
-  font-size: 1.5em;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-@media (min-width: 768px) {
-  .nav-menu {
-    display: flex;
-  }
-  
-}
+
 footer {
-  background: var(--dark_blue);
+  background: var(--second-color);
   color: #fff;
   text-align: center;
   padding: 2em 0 4em 0;
@@ -203,46 +316,15 @@ footer {
 .btn-record, .btn-whatsapp {
   display: none;
 }
-@media (min-width: 768px) {
-  .btn-record, .btn-whatsapp {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    background: var(--dark-red);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  .side-menu {
-    display: none;
-  }
-  header {
-    text-align: start;
-  }
-}
-/* Адаптивка */
-@media (min-width: 768px) {
-  body {
-    font-size: 18px;
-  }
-}
 
-@media (min-width: 1024px) {
-  body {
-    font-size: 20px;
-  }
-}
+
+
+
 .about {
-
   padding: 20px;
   text-align: center;
 }
 .about h2 {
-  font-size: 28px;
-  color: var(--dark-red);
   margin-bottom: 20px;
 }
 
@@ -250,28 +332,17 @@ footer {
   max-width: 800px;
   margin: 0 auto;
   margin-bottom: 1em;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
-  .about h2 {
-    font-size: 36px;
-  }
-  .about p {
-    font-size: 20px;
-  }
 }
 
 .advantages {
-  background-color: var(--dark_blue);
+  background-color: var(--second-color);
+  border-radius:1em;
   padding: 60px 20px;
   text-align: center;
 }
 
 .advantages h2 {
-  font-size: 28px;
-  color: var(--dark-gold);
+  color: var(--text-color);
   margin-bottom: 30px;
 }
 
@@ -284,41 +355,19 @@ footer {
 }
 
 .adv-list li {
-  font-size: 1.3em;
-  color: #ffffff;
+  color: var(--text-color);
   margin-bottom: 15px;
   position: relative;
   display: flex;
-  line-height: 1.2em;
-}
-
-@media (min-width: 768px) {
-  .advantages {
-    width: 30em;
-  }
-  .services {
-    width: 100%;
-  }
-  .clinic {
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .advantages h2 {
-    font-size: 36px;
-  }
-  .adv-list li {
-    font-size: 20px;
-  }
+  line-height: 1.5em;
 }
 .services {
   color: var(--dark-gold);
-  padding: 60px 20px;
+  padding: 60px 1em;
   text-align: center;
 }
 
 .services h2 {
-  font-size: 28px;
   color: var(--dark-gold);
   margin-bottom: 30px;
 }
@@ -344,44 +393,8 @@ footer {
   border-color: var(--dark-red);
   color: var(--dark-red);
 }
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1em;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
-.service-item:hover .overlay {
-  opacity: 1;
-}
 
-.service-item:focus-within .overlay,
-.service-item:active .overlay {
-  opacity: 1;
-}
-@media (min-width: 768px) {
-  .services h2 {
-    font-size: 36px;
-  }
-
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .service-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 .price {
   padding: 60px 20px;
   text-align: center;
@@ -402,7 +415,7 @@ footer {
   position: fixed;
   bottom: 1em;
   right: 1em; 
-  background-color: var(--dark-red);  
+  background-color: var(--third-color);  
   color: #fff; 
   padding: 0.75em 1.5em;
   border-radius: 30px;
@@ -410,15 +423,16 @@ footer {
   font-size: 1em;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
+  transition: font-size 0.3s ease;
   z-index: 1000;
 }
 
 .btn-fixed:hover {
-  background-color: var(--dark-red);
+    font-size: 1.2em;
 }
 .staff {
   background: var(--dark_blue);
-  padding: 60px 20px;
+  padding: 60px 1em;
   color:var(--dark-gold);
 }
 .staff h2{
@@ -454,8 +468,8 @@ footer {
   background-image: 
     linear-gradient(to bottom, 
       rgba(0, 0, 0, 0) 0%, 
-      var(--dark-gold) 60%, 
-      var(--dark-gold) 100%);
+        rgb(255 255 255 / 36%) 60%, 
+      rgb(255 255 255 / 50%) 100%);
 }
 .staff-info h3 {
   margin: 0 0 0.5rem 0;
@@ -614,9 +628,9 @@ footer {
 }
 
 .social-icon svg {
-  width: 1.5em; 
+  width: 1.5em;
   height: 1.5em;
-  fill: currentColor; 
+  fill: var(--text-color);
 }
 .contacts {
   line-height: 1.6;
@@ -633,7 +647,74 @@ footer {
 }
 
 .contact-item a {
-  color: var(--dark-gold);
   text-decoration: none;
   transition: color 0.2s;
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 900px) {
+
+  .header-logo {
+    justify-content: space-between;
+  }
+  .pair-containers {
+    padding-left: 10em;
+    padding-right: 10em;
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-menu {
+    display: flex;
+  }
+  .btn-record, .btn-whatsapp {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: var(--dark-red);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .side-menu {
+    display: none;
+  }
+  header {
+    text-align: start;
+  }
+  body {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  p {
+    /* font-size: 18px; */
+  }
+  .advantages {
+    width: 30em;
+  }
+  .services {
+    width: 100%;
+    padding: 60px 10em;
+  }
+  .clinic {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .staff {
+    padding:60px 10em;
+  }
 }
