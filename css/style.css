@@ -169,7 +169,7 @@ body {
   padding: 1em;
 }
 .pair-containers{
-  padding: 60px 0px;
+  padding: 60px 1em;
   display: flex;
   flex-direction: column;
 }
@@ -339,7 +339,7 @@ footer {
 .advantages {
   /* background-color: var(--second-color); */
   /* border-radius:1em; */
-  padding: 60px 20px;
+  padding: 60px 0px;
   text-align: center;
 }
 
