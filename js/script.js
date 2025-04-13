@@ -98,3 +98,36 @@ document.getElementById("menuClose").addEventListener("click", () => {
       // Инициализация класса для изображения
       viewerImage.classList.add('active-image');
     });
+
+// Для проявляения кнопки онлайн-записи
+const element = document.querySelector('.btn-fixed');
+const triggerScrollPosition = 300; // Пиксели, после которых элемент появится
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > triggerScrollPosition) {
+    element.classList.add('visible');
+  } else {
+    element.classList.remove('visible');
+  }
+});
+
+// Для хедера исчезновение фона при скроле
+
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  let lastScrollTop = 0;
+  const scrollThreshold = 30; 
+
+  window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (currentScroll > scrollThreshold) {
+      header.classList.add('scrolled');
+    } 
+    else if (currentScroll === 0) {
+      header.classList.remove('scrolled');
+    }
+    
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+});

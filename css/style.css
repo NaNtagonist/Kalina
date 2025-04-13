@@ -143,7 +143,7 @@ html {
   box-sizing: border-box;
 }
 p, h2, a, li {
-  color:var(--text-color);
+  color: var(--text-color);
   font-weight:300;
   line-height: 1.5;
 }
@@ -169,16 +169,14 @@ body {
   padding: 1em;
 }
 .pair-containers{
-  padding-left: 1em;
-  padding-right: 1em;
-
+  padding: 60px 0px;
   display: flex;
   flex-direction: column;
 }
 
 
 .slogan-section {
-  min-height: 15em;
+  min-height: 11em;
   display: flex;
   justify-content:center;
   align-items: center;
@@ -191,17 +189,21 @@ body {
 }
 
 header {
-  background: var(--main-color);
+  background-color: transparent;
   text-align: center;
   width: 100%;
   height: 4em;
   position: fixed;
   padding:0 10em;
   z-index: 1;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out,background-color 0.3s ease;
 }
 header.hidden {
   transform: translateY(-100%);
+}
+header.scrolled {
+
+  background-color: var(--main-color);
 }
 .header-logo {
   padding: 1em;
@@ -212,8 +214,8 @@ header.hidden {
   gap:2em
 }
 .btn-contact-us {
-  background-color: var(--third-color);  
-  color: #fff; 
+  background-color: var(--third-color);
+  color: #fff;
   padding: 0.75em 1.5em;
   border-radius: 30px;
   text-decoration: none;
@@ -321,7 +323,7 @@ footer {
 
 
 .about {
-  padding: 20px;
+  /* padding: 20px; */
   text-align: center;
 }
 .about h2 {
@@ -331,12 +333,12 @@ footer {
 .about p {
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .advantages {
-  background-color: var(--second-color);
-  border-radius:1em;
+  /* background-color: var(--second-color); */
+  /* border-radius:1em; */
   padding: 60px 20px;
   text-align: center;
 }
@@ -394,14 +396,12 @@ footer {
   color: var(--dark-red);
 }
 
-
 .price {
   padding: 60px 20px;
   text-align: center;
 }
 
 .price h2 {
-  color: var(--dark-gold);
   margin-bottom: 30px;
 }
 .price iframe {
@@ -409,6 +409,63 @@ footer {
   border: none;
   border-radius: 16px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.our-work {
+  padding: 60px 0px;
+  text-align: center;
+}
+.our-work h2 {
+  margin-bottom: 30px;
+}
+.our-work-slider {
+  scrollbar-color: var(--third-color) var(--second-color);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.our-work-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  border-radius: 1rem;
+  background-color: var(--third-color);
+  background-size: cover;
+  background-position: center;
+  max-width:20em;
+  aspect-ratio: 1/1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.reviews {
+  padding: 60px 0px;
+  text-align: center;
+}
+.reviews h2 {
+  margin-bottom: 30px;
+}
+.reviews-slider {
+  scrollbar-color: var(--third-color) var(--second-color);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.reviews-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  border-radius: 1rem;
+  background-color: var(--main-color);
+  background-size: cover;
+  background-position: center;
+  max-width:20em;
+  padding:1em;
+  height: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
 .btn-fixed {
@@ -424,12 +481,18 @@ footer {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
   transition: font-size 0.3s ease;
+  transition: opacity 0.5s ease;
   z-index: 1000;
+  opacity: 0;
 }
 
 .btn-fixed:hover {
     font-size: 1.2em;
 }
+.btn-fixed.visible {
+  opacity: 1;
+}
+
 .staff {
   background: var(--dark_blue);
   padding: 60px 1em;
@@ -440,13 +503,13 @@ footer {
 }
 .staff-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   padding-bottom: 1rem;
 }
 
 .staff-card {
-  height: 30em;
+  aspect-ratio: 2/3;
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
@@ -468,14 +531,14 @@ footer {
   background-image: 
     linear-gradient(to bottom, 
       rgba(0, 0, 0, 0) 0%, 
-        rgb(255 255 255 / 36%) 60%, 
-      rgb(255 255 255 / 50%) 100%);
+        rgb(255 255 255 / 56%) 60%, 
+      rgb(255 255 255 / 78%) 100%);
 }
 .staff-info h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.2rem;
-  color: #fff;
-  font-weight: 600;
+  color: var(--text-color);
+  font-weight: 500;
 }
 
 .staff-info .position {
@@ -492,13 +555,12 @@ footer {
   font-style: italic;
 }
 .clinic {
-  background-color: var(--dark_blue);
-  color: var(--dark-gold);
-  padding: 60px 20px;
+  padding: 60px 0px;
   text-align: center;
 }
 
 .clinic-slider {
+  scrollbar-color: var(--third-color) var(--second-color);
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -512,7 +574,7 @@ footer {
   border-radius: 1rem;
   background-size: cover;
   background-position: center;
-  height: 400px;
+  aspect-ratio: 4 / 3;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
@@ -650,6 +712,9 @@ footer {
   text-decoration: none;
   transition: color 0.2s;
 }
+
+
+
 @media (min-width: 1024px) {
   body {
     font-size: 20px;
@@ -659,13 +724,17 @@ footer {
   }
 }
 @media (min-width: 900px) {
-
+  .slogan-section {
+    padding-left: 5em;
+  }
+  .about {
+    padding-right: 5em;
+  }
   .header-logo {
     justify-content: space-between;
   }
   .pair-containers {
-    padding-left: 10em;
-    padding-right: 10em;
+    padding:60px 5em;
     display: flex;
     flex-direction: row;
   }
@@ -700,7 +769,7 @@ footer {
     /* font-size: 18px; */
   }
   .advantages {
-    width: 30em;
+    width: 50%;
   }
   .services {
     width: 100%;
@@ -714,7 +783,8 @@ footer {
   .service-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  .staff {
+  .staff,.price,.our-work {
     padding:60px 10em;
   }
+
 }
