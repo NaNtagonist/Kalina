@@ -204,11 +204,11 @@ body {
 }
 
 .enter-div-caption {
-  display: none;
-  margin-top: 1em;
+  display: block;
+  margin: 1em 0px;
 }
 .slogan-section {
-  min-height: 11em;
+  min-height: 20em;
   display: flex;
   flex-direction: column;
   justify-content:space-between;
@@ -350,7 +350,7 @@ header.scrolled {
 
 .about {
   /* padding: 20px; */
-  width: 40%;
+  /* width: 40%; */
   text-align: center;
 }
 .about h2 {
@@ -358,9 +358,9 @@ header.scrolled {
 }
 
 .about p {
+  padding: 0px 1em;
   max-width: 800px;
   margin: 0 auto;
-  margin-bottom: 2em;
 }
 .advantages {
   /* background-color: var(--second-color); */
@@ -449,6 +449,7 @@ header.scrolled {
 }
 
 .our-work {
+  background-color:var(--second-color);
   padding: var(--padding-top) 0px;
   text-align: center;
 }
@@ -737,7 +738,7 @@ header.scrolled {
   margin-bottom: 30px;
 }
 footer {
-  background: var(--second-color);
+  background: var(--main-color);
   color: #fff;
   text-align: center;
 }
