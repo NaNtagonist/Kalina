@@ -374,7 +374,7 @@ header.scrolled {
   margin-bottom: 30px;
 }
 
-.adv-list {
+.advent-list {
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -382,7 +382,7 @@ header.scrolled {
   text-align: left;
 }
 
-.adv-list li {
+.advent-list li {
   color: var(--text-color);
   margin-bottom: 15px;
   position: relative;
