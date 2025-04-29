@@ -191,10 +191,18 @@ body {
 }
 .video-side {
   height: inherit;
-  width: we;
   flex: 1;
   position: absolute;
   z-index: -1;
+}
+.video-mask {
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  background-color:#ffffffc9;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .video-side video {
   object-position:top center;
