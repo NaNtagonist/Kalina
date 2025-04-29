@@ -622,7 +622,9 @@ header.scrolled {
 
 
 .staff-info {
+  text-shadow: 0rem 0px 1rem #ffffffdb;
   padding: 1.5rem;
+  padding-top: 3rem;
   text-align: center;
   /* min-height: 13em; */
   background-image: 
