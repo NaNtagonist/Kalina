@@ -420,13 +420,8 @@ header.scrolled {
   color: var(--dark-gold);
   margin-bottom: 30px;
 }
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1em;
-}
 .service-slider {
-  scrollbar-color: var(--third-color) var(--second-color);
+  scrollbar-color: var(--second-color) var(--main-color);
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -446,7 +441,7 @@ header.scrolled {
   background-size: cover;
   background-position: center;
   border-radius: 1em;
-  background-color:#AE2C36;
+  background-color:var(--second-color);
   overflow: hidden;
   cursor: pointer;
 }
@@ -471,14 +466,14 @@ header.scrolled {
 
 .our-work {
   background-color:var(--second-color);
-  padding: var(--padding-top) 0px;
+  padding: var(--padding-top) 1em;
   text-align: center;
 }
 .our-work h2 {
   margin-bottom: 30px;
 }
 .our-work-slider {
-  scrollbar-color: var(--third-color) var(--second-color);
+  scrollbar-color: var(--main-color) var(--second-color);
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -486,7 +481,7 @@ header.scrolled {
   padding-bottom: 1rem;
 }
 .our-work-slide {
-  flex: 0 0 80%;
+  flex: 0 0 100%;
   scroll-snap-align: start;
   border-radius: 1rem;
   background-color: var(--third-color);
@@ -499,14 +494,14 @@ header.scrolled {
 }
 .our-equip {
   background-color: var(--second-color);
-  padding: var(--padding-top) 0px;
+  padding: var(--padding-top) 1em;
   text-align: center;
 }
 .our-equip h2 {
   margin-bottom: 30px;
 }
 .our-equip-slider {
-  scrollbar-color: var(--third-color) var(--second-color);
+  scrollbar-color: var(--main-color) var(--second-color);
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -514,7 +509,7 @@ header.scrolled {
   padding-bottom: 1rem;
 }
 .our-equip-slide {
-  flex: 0 0 91%;
+  flex: 0 0 100%;
   scroll-snap-align: start;
   border-radius: 1rem;
   max-width:20em;
@@ -540,7 +535,7 @@ header.scrolled {
   border-radius: 0px 0px 1em 1em;
 }
 .reviews {
-  padding: var(--padding-top) 0px;
+  padding: var(--padding-top) 1em;
   text-align: center;
 }
 .reviews h2 {
@@ -555,7 +550,7 @@ header.scrolled {
   padding-bottom: 1rem;
 }
 .reviews-slide {
-  flex: 0 0 80%;
+  flex: 0 0 100%;
   scroll-snap-align: start;
   border-radius: 1rem;
   background-color: var(--main-color);
@@ -599,33 +594,39 @@ header.scrolled {
 .staff h2{
   margin-bottom: 30px;
 }
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.staff-slider {
+  scrollbar-color: var(--second-color) var(--main-color);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 1rem;
   padding-bottom: 1rem;
 }
-
 .staff-card {
-  aspect-ratio: 5/6;
-  background-position:bottom;
-  border-radius: 1rem;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  max-width: 20em;
+  transition: transform 0.3s ease;
+}
+.staff-item {
+  scroll-snap-align: start;
+  position: relative;
+  width: 100%; /* или фиксированная ширина, если нужно */
+  aspect-ratio: 5 / 6;
+  object-fit: cover; /* заменяет background-size: cover */
+  object-position: bottom; /* заменяет background-position */
+  border-radius: 1em;
+  background-color: var(--second-color); /* будет видно, если изображение не загрузится */
   overflow: hidden;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  background-size: cover;
-  position: relative;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: flex-end;
-  
+  cursor: pointer;
+  display: block; /* убирает лишний отступ снизу у img */
 }
 
 
 .staff-info {
   text-shadow: 0rem 0px 1rem #ffffffdb;
-  padding: 1.5rem 0;
-  padding-top: 3rem;
+  padding: 0.5rem 0;
+  /* padding-top: 3rem; */
   text-align: center;
   background-image: 
     linear-gradient(to bottom, 
@@ -821,9 +822,7 @@ footer {
   body {
     font-size: 20px;
   }
-  .service-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+
 }
 @media (width>900px) {
   :root {
@@ -877,7 +876,7 @@ footer {
     justify-content: space-between;
   }
   .pair-containers {
-    padding:var(--padding-top) 5em;
+    padding:var(--padding-top) 10em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -925,10 +924,8 @@ footer {
     display: flex;
     align-items: center;
   }
-  .service-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .staff,.price,.our-work,.our-equip {
+
+  .staff,.price,.our-work,.our-equip,.reviews {
     padding:var(--padding-top) 10em;
   }
 
